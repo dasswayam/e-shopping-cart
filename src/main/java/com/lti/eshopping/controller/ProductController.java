@@ -22,15 +22,8 @@ public class ProductController {
 	@Autowired
 	IProductService productService;
 	
-	@RequestMapping("/add")
-	public String hello()
-	{
-		System.out.print("console suceed");
-		return "hello Niraj";
-	}
-	
 	@RequestMapping(value="/add-product",method=RequestMethod.POST,produces="application/json",consumes="application/json")
-	public ResponseEntity<Product> addEmp(@RequestBody Product product)
+	public ResponseEntity<Product> addProduct(@RequestBody Product product)
 	{
 		HttpHeaders headers=new HttpHeaders();
 		headers.add("Message","product added successfully");
@@ -39,7 +32,8 @@ public class ProductController {
 	}
 	
 	@RequestMapping(value = "/get-product-by-category/{category-name}", method = RequestMethod.GET, produces = "application/json")
-	public ResponseEntity<List<Product>> getProductByCategoryName(@PathVariable(name = "category-name") String categoryName) {
+	public ResponseEntity<List<Product>> getProductByCategoryName(@PathVariable(name = "category-name") String categoryName) 
+	{
 		List<Product> products = productService.getByCategory(categoryName);
 		HttpStatus status = HttpStatus.OK;
 		HttpHeaders headers = new HttpHeaders();
@@ -49,7 +43,7 @@ public class ProductController {
 	}
 	
 	@RequestMapping(value="/update-product",method=RequestMethod.POST,produces="application/json",consumes="application/json")
-	public ResponseEntity<Product> updateEmp(@RequestBody Product product)
+	public ResponseEntity<Product> updateProduct(@RequestBody Product product)
 	{
 		HttpHeaders headers=new HttpHeaders();
 		headers.add("Message","product updated successfully");
