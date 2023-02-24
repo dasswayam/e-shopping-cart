@@ -1,0 +1,98 @@
+2023-02-24T14:05:31.325+05:30  INFO 24280 --- [restartedMain] com.lti.eshopping.EshoppingApplication   : Starting EshoppingApplication using Java 17.0.6 with PID 24280 (C:\Users\10715902\eclipse-workspace\eshopping\target\classes started by 10715902 in C:\Users\10715902\eclipse-workspace\eshopping)
+2023-02-24T14:05:31.350+05:30  INFO 24280 --- [restartedMain] com.lti.eshopping.EshoppingApplication   : No active profile set, falling back to 1 default profile: "default"
+2023-02-24T14:05:31.471+05:30  INFO 24280 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-02-24T14:05:31.472+05:30  INFO 24280 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-02-24T14:05:33.256+05:30  INFO 24280 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-02-24T14:05:33.297+05:30  INFO 24280 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 21 ms. Found 0 JPA repository interfaces.
+2023-02-24T14:05:34.457+05:30  INFO 24280 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-02-24T14:05:34.478+05:30  INFO 24280 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-02-24T14:05:34.479+05:30  INFO 24280 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.5]
+2023-02-24T14:05:34.610+05:30  INFO 24280 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-02-24T14:05:34.611+05:30  INFO 24280 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3137 ms
+2023-02-24T14:05:34.878+05:30  INFO 24280 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-02-24T14:05:34.984+05:30  INFO 24280 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-02-24T14:05:35.539+05:30  INFO 24280 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-02-24T14:05:36.346+05:30  INFO 24280 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7f311816
+2023-02-24T14:05:36.352+05:30  INFO 24280 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-02-24T14:05:36.515+05:30  INFO 24280 --- [restartedMain] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2023-02-24T14:05:37.156+05:30 ERROR 24280 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.MappingException: Column 'category_id' is duplicated in mapping for entity 'com.lti.eshopping.model.Category' (use '@Column(insertable=false, updatable=false)' when mapping multiple properties to the same column)
+2023-02-24T14:05:37.158+05:30  WARN 24280 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.MappingException: Column 'category_id' is duplicated in mapping for entity 'com.lti.eshopping.model.Category' (use '@Column(insertable=false, updatable=false)' when mapping multiple properties to the same column)
+2023-02-24T14:05:37.160+05:30  INFO 24280 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-02-24T14:05:37.175+05:30  INFO 24280 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-02-24T14:05:37.179+05:30  INFO 24280 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-02-24T14:05:37.204+05:30  INFO 24280 --- [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2023-02-24T14:05:37.244+05:30 ERROR 24280 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.MappingException: Column 'category_id' is duplicated in mapping for entity 'com.lti.eshopping.model.Category' (use '@Column(insertable=false, updatable=false)' when mapping multiple properties to the same column)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1752) ~[spring-beans-6.0.5.jar:6.0.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600) ~[spring-beans-6.0.5.jar:6.0.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.0.5.jar:6.0.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.0.5.jar:6.0.5]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.0.5.jar:6.0.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.0.5.jar:6.0.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.0.5.jar:6.0.5]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1132) ~[spring-context-6.0.5.jar:6.0.5]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:907) ~[spring-context-6.0.5.jar:6.0.5]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:584) ~[spring-context-6.0.5.jar:6.0.5]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.0.3.jar:3.0.3]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:732) ~[spring-boot-3.0.3.jar:3.0.3]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434) ~[spring-boot-3.0.3.jar:3.0.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:310) ~[spring-boot-3.0.3.jar:3.0.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1304) ~[spring-boot-3.0.3.jar:3.0.3]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1293) ~[spring-boot-3.0.3.jar:3.0.3]
+	at com.lti.eshopping.EshoppingApplication.main(EshoppingApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-3.0.3.jar:3.0.3]
+Caused by: jakarta.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is org.hibernate.MappingException: Column 'category_id' is duplicated in mapping for entity 'com.lti.eshopping.model.Category' (use '@Column(insertable=false, updatable=false)' when mapping multiple properties to the same column)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:421) ~[spring-orm-6.0.5.jar:6.0.5]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-6.0.5.jar:6.0.5]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:352) ~[spring-orm-6.0.5.jar:6.0.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1798) ~[spring-beans-6.0.5.jar:6.0.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1748) ~[spring-beans-6.0.5.jar:6.0.5]
+	... 21 common frames omitted
+Caused by: org.hibernate.MappingException: Column 'category_id' is duplicated in mapping for entity 'com.lti.eshopping.model.Category' (use '@Column(insertable=false, updatable=false)' when mapping multiple properties to the same column)
+	at org.hibernate.mapping.PersistentClass.checkColumnDuplication(PersistentClass.java:1009) ~[hibernate-core-6.1.7.Final.jar:6.1.7.Final]
+	at org.hibernate.mapping.PersistentClass.checkPropertyColumnDuplication(PersistentClass.java:1027) ~[hibernate-core-6.1.7.Final.jar:6.1.7.Final]
+	at org.hibernate.mapping.PersistentClass.checkColumnDuplication(PersistentClass.java:1055) ~[hibernate-core-6.1.7.Final.jar:6.1.7.Final]
+	at org.hibernate.mapping.PersistentClass.validate(PersistentClass.java:720) ~[hibernate-core-6.1.7.Final.jar:6.1.7.Final]
+	at org.hibernate.mapping.RootClass.validate(RootClass.java:283) ~[hibernate-core-6.1.7.Final.jar:6.1.7.Final]
+	at org.hibernate.boot.internal.MetadataImpl.validate(MetadataImpl.java:376) ~[hibernate-core-6.1.7.Final.jar:6.1.7.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:301) ~[hibernate-core-6.1.7.Final.jar:6.1.7.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:415) ~[hibernate-core-6.1.7.Final.jar:6.1.7.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1423) ~[hibernate-core-6.1.7.Final.jar:6.1.7.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66) ~[spring-orm-6.0.5.jar:6.0.5]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:376) ~[spring-orm-6.0.5.jar:6.0.5]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-6.0.5.jar:6.0.5]
+	... 25 common frames omitted
+
+2023-02-24T14:10:25.612+05:30  INFO 24844 --- [restartedMain] com.lti.eshopping.EshoppingApplication   : Starting EshoppingApplication using Java 17.0.6 with PID 24844 (C:\Users\10715902\eclipse-workspace\eshopping\target\classes started by 10715902 in C:\Users\10715902\eclipse-workspace\eshopping)
+2023-02-24T14:10:25.616+05:30  INFO 24844 --- [restartedMain] com.lti.eshopping.EshoppingApplication   : No active profile set, falling back to 1 default profile: "default"
+2023-02-24T14:10:25.710+05:30  INFO 24844 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-02-24T14:10:25.712+05:30  INFO 24844 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-02-24T14:10:27.108+05:30  INFO 24844 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-02-24T14:10:27.140+05:30  INFO 24844 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 17 ms. Found 0 JPA repository interfaces.
+2023-02-24T14:10:28.331+05:30  INFO 24844 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-02-24T14:10:28.354+05:30  INFO 24844 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-02-24T14:10:28.355+05:30  INFO 24844 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.5]
+2023-02-24T14:10:28.497+05:30  INFO 24844 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-02-24T14:10:28.497+05:30  INFO 24844 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2785 ms
+2023-02-24T14:10:28.771+05:30  INFO 24844 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-02-24T14:10:28.854+05:30  INFO 24844 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-02-24T14:10:29.303+05:30  INFO 24844 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-02-24T14:10:29.992+05:30  INFO 24844 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7906edd2
+2023-02-24T14:10:30.000+05:30  INFO 24844 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-02-24T14:10:30.112+05:30  INFO 24844 --- [restartedMain] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2023-02-24T14:10:32.333+05:30  INFO 24844 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-02-24T14:10:32.364+05:30  INFO 24844 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-02-24T14:10:32.658+05:30  WARN 24844 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-02-24T14:10:34.586+05:30  WARN 24844 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2023-02-24T14:10:34.716+05:30  INFO 24844 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-02-24T14:10:34.741+05:30  INFO 24844 --- [restartedMain] com.lti.eshopping.EshoppingApplication   : Started EshoppingApplication in 10.19 seconds (process running for 11.111)
+2023-02-24T14:10:57.631+05:30  INFO 24844 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-02-24T14:10:57.632+05:30  INFO 24844 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-02-24T14:10:57.636+05:30  INFO 24844 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
