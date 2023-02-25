@@ -8,5 +8,6 @@ import com.lti.eshopping.model.Cart;
 @Repository
 public interface CartRepository extends JpaRepository<Cart, Integer>{
 	
+	public abstract Cart findByProduct_productIdAndUser_userId(int productId,int userId);	
 
 }
