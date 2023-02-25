@@ -1,13 +1,17 @@
 package com.lti.eshopping.service;
 
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.lti.eshopping.model.Cart;
 import com.lti.eshopping.model.Order;
+import com.lti.eshopping.model.Product;
 import com.lti.eshopping.repository.CartRepository;
 import com.lti.eshopping.repository.OrderRepository;
+import com.lti.eshopping.repository.ProductRepository;
 
 
 @Service
@@ -15,10 +19,12 @@ public class CartService implements ICartService {
 
 	@Autowired
 	CartRepository cartRepo;
+	
 	@Autowired
 	OrderRepository orderRepo;
 	
-	static int order_id=0;
+	@Autowired
+	ProductRepository productRepo;
 	
 	@Override
 	public Cart addToCart(Cart cart) {
@@ -29,14 +35,21 @@ public class CartService implements ICartService {
 	@Override
 	public Cart checkOut(Cart cart) {
 		// TODO Auto-generated method stub
-		orderRepo.save(new Order(order_id++,cart.getUser().getFirstName(),cart.getProduct().getProductName(),cart.getQuantity(),cart.getQuantity()*cart.getProduct().getPrice()));
+		Product product=productRepo.findById(cart.getProduct().getProductId()).get();
+		if(product.getAvailableQuantity()!=0 && product.getAvailableQuantity()>=cart.getQuantityNeeded())
+		{
+		product.setAvailableQuantity(product.getAvailableQuantity()-cart.getQuantityNeeded());	
+		orderRepo.save(new Order(cart.getUser().getFirstName(),cart.getProduct().getProductName(),cart.getQuantityNeeded(),cart.getQuantityNeeded()*cart.getProduct().getPrice()));
 		cartRepo.delete(cart);
-		return null;
+		}
+		return cart;
 	}
 
 	@Override
 	public Cart updateCart(Cart cart) {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method stub	
+		Cart cartItem=cartRepo.findByProduct_productIdAndUser_userId(cart.getProduct().getProductId(),cart.getUser().getUserId());
+		cart.setCartId(cartItem.getCartId());
 		return cartRepo.save(cart);
 	}
 	

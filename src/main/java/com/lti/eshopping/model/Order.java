@@ -1,14 +1,22 @@
 package com.lti.eshopping.model;
 
 
+import org.hibernate.annotations.GenericGenerator;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="order")
+@Table(name="orders")
 public class Order {
 
+	@Id
+	@GenericGenerator(name="order_seq",strategy="increment")
+	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator="order_seq")
 	@Column(name="order_id")
     private int orderId;
 	
@@ -31,9 +39,8 @@ public class Order {
 	}
 
 
-	public Order(int orderId, String userName, String productName, int quantity, int total) {
+	public Order(String userName, String productName, int quantity, int total) {
 		super();
-		this.orderId = orderId;
 		this.userName = userName;
 		this.productName = productName;
 		this.quantity = quantity;
